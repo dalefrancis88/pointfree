@@ -13,10 +13,10 @@
   "scripts": {
     "lint": "",
     "test": "",
-    "build": "rimraf dist && babel src -d dist && npm run copy",
-    "copy": "cpx \"../../LICENSE\" \"dist\" && cpx {README.md,package.json} dist",
-    "copy:next": "node build/copy.js",
-    "build:publish": "npm run build && npm publish dist"
+    "prepublish": "npm run build",
+    "prebuild": "rimraf build",
+    "build": "babel src -d dist && npm run copy",
+    "copy": "cpx \"../../LICENSE\" \"dist\" && cpx {README.md,package.json} dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",

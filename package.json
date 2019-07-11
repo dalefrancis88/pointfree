@@ -8,6 +8,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "release": "lerna publish --contents dist"
+  },
   "repository": "https://github.com/dalefrancis88/pointfree.git",
   "devDependencies": {}
 }
