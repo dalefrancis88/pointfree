@@ -2,12 +2,31 @@
   "name": "@pointfree/core",
   "version": "0.0.2-alpha.0",
   "description": "The core infra for all of pointfree",
-  "main": "index.js",
+  "main": "core.js",
   "author": "dalefrancis88",
   "license": "MIT",
   "repository": "https://github.com/dalefrancis88/pointfree.git",
   "gitHead": "0e0170b491124e0ee0773feb063ad0758e2112c5",
   "publishConfig": {
     "access": "public"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "lint": "",
+    "test": "",
+    "prepublish": "yarn run build",
+    "build": "rimraf build && webpack --mode production",
+    "copy": "ncp package.json ./build/dist/package.json && ncp README.md ./build/dist/README.md && ncp LICENSE ./build/dist/LICENSE"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-loader": "^8.0.6",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.6.3",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
   }
 }
