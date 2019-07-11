@@ -5,5 +5,6 @@
   "main": "index.js",
   "author": "dalefrancis88",
   "license": "MIT",
-  "repository": "https://github.com/dalefrancis88/pointfree.git"
+  "repository": "https://github.com/dalefrancis88/pointfree.git",
+  "gitHead": "0e0170b491124e0ee0773feb063ad0758e2112c5"
 }

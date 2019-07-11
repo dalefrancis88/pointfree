@@ -1,0 +1,12 @@
+{
+  "name": "pointfree",
+  "version": "0.0.1",
+  "description": "A collection of pointfree methods to help with composition",
+  "author": "dalefrancis88",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "https://github.com/dalefrancis88/pointfree.git"
+}
