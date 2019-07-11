@@ -1,0 +1,9 @@
+{
+  "name": "@pointfree/core",
+  "version": "0.0.1-alpha.0",
+  "description": "The core infra for all of pointfree",
+  "main": "index.js",
+  "author": "dalefrancis88",
+  "license": "MIT",
+  "repository": "https://github.com/dalefrancis88/pointfree.git"
+}
