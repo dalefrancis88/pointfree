@@ -1,6 +1,6 @@
 {
   "name": "@pointfree/core",
-  "version": "0.0.2-alpha.2",
+  "version": "0.0.2-alpha.3",
   "description": "The core infra for all of pointfree",
   "main": "index.js",
   "author": "dalefrancis88",
