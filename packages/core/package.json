@@ -2,7 +2,7 @@
   "name": "@pointfree/core",
   "version": "0.0.2-alpha.2",
   "description": "The core infra for all of pointfree",
-  "main": "dist/index.js",
+  "main": "index.js",
   "author": "dalefrancis88",
   "license": "MIT",
   "repository": "https://github.com/dalefrancis88/pointfree.git",
@@ -10,16 +10,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "dist/**/*.*"
-  ],
   "scripts": {
     "lint": "",
     "test": "",
-    "build": "rimraf dist && babel src -d dist && npm run update:licence",
-    "update:licence": "cpx \"../../LICENSE\" \"./\"",
-    "copy:next": "node build/copy.js"
+    "build": "rimraf dist && babel src -d dist && npm run copy",
+    "copy": "cpx \"../../LICENSE\" \"dist\" && cpx {README.md,package.json} dist",
+    "copy:next": "node build/copy.js",
+    "build:publish": "npm run build && npm publish dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
