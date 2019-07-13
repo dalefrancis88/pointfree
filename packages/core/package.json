@@ -12,17 +12,27 @@
   },
   "scripts": {
     "lint": "",
-    "test": "",
+    "test": "jest",
+    "test:dev": "jest --watchAll",
+    "test:prod": "npm run test -- --coverage",
     "prepublish": "npm run build",
     "prebuild": "rimraf build",
-    "build": "babel src -d dist && npm run copy",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:copy-files",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel ./src -d ./build --ignore \"**/*.spec.js\"",
+    "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel ./src -d ./build/es --ignore \"**/*.spec.js\"",
+    "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel ./src -d ./build/esm --ignore \"**/*.spec.js\"",
+    "build:copy-files": "node ../../scripts/copy-files.js",
     "copy": "cpx \"../../LICENSE\" \"dist\" && cpx {README.md,package.json} dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
+    "babel-jest": "^24.8.0",
+    "babel-preset-minify": "^0.5.0",
     "cpx": "^1.5.0",
+    "cross-env": "^5.2.0",
+    "jest": "^24.8.0",
     "rimraf": "^2.6.3"
   }
 }
