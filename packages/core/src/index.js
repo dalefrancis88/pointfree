@@ -1,2 +1,7 @@
-export { default as identity } from './identity'
 export { default as constant } from './constant'
+export { default as hasFunction } from './hasFunction'
+export { default as identity } from './identity'
+export { default as isFunction } from './isFunction'
+export { default as isNil } from './isNil'
+export { default as isNumber } from './isNumber'
+export { default as isString } from './isString'

@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverageFrom: ['**/*.js'],
+  collectCoverageFrom: ['src/**/*.js'],
   coveragePathIgnorePatterns: ['/node_modules/', '/build/'],
   coverageDirectory: 'build/reports/coverage',
   coverageReporters: ['text', 'html'],
