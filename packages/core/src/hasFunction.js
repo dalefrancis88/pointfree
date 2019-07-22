@@ -11,11 +11,11 @@ const isValidKey = key =>
 
 // hasFunction :: Function -> Boolean
 const hasFunction = (name, m) => {
-    if(!isValidKey(name) ||  isNil(m)) {
-        throw new TypeError('First argument should be a string or integer. Second argument should be a valid object or arry')
+    if(!isValidKey(name)) {
+        throw new TypeError('First argument should be a string or integer')
     }
 
-    return isFunction(m[name])
+    return !isNil(m) && isFunction(m[name])
 }
     
 

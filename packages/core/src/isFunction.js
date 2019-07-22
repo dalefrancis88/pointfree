@@ -3,6 +3,9 @@
 
 // isFunction :: Function -> Boolean
 const isFunction = fn =>
-    typeof(fn) === 'function'
+    {
+        console.log('log')
+        return typeof(fn) === 'function'
+    }
 
 export default isFunction
