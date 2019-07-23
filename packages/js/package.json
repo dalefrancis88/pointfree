@@ -1,6 +1,6 @@
 {
   "name": "@pointfree/js",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1",
   "description": "All of the functions of the JS types, pointfree",
   "main": "index.js",
   "author": "dalefrancis88",
@@ -35,6 +35,6 @@
     "rimraf": "^2.6.3"
   },
   "dependencies": {
-    "@pointfree/core": "^0.0.2"
+    "@pointfree/core": "^0.0.3"
   }
 }
