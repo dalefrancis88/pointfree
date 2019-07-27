@@ -10,9 +10,11 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "",
-    "test": "jest",
-    "test:dev": "jest --watchAll",
+    "lint": "eslint --ext .js .",
+    "test:coverage": "nyc npm run test:src",
+    "test:dev": "nodemon -q -e js -w src -x \"npm run test:src -s\"",
+    "test:src": "tape -r @babel/register src/**/*.spec.js src/*.spec.js | tap-spec",
+    "test": "npm run lint && npm run test:coverage",
     "test:prod": "npm run test -- --coverage",
     "prepublish": "npm run build",
     "prebuild": "rimraf build",
@@ -23,16 +25,33 @@
     "build:copy-files": "node ../../scripts/copy-files.js",
     "copy": "cpx \"../../LICENSE\" \"dist\" && cpx {README.md,package.json} dist"
   },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "exclude": [
+      "src/**/*.spec.js",
+      "./*.js",
+      "build"
+    ]
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
+    "@babel/register": "^7.5.5",
     "babel-jest": "^24.8.0",
     "babel-preset-minify": "^0.5.0",
     "cpx": "^1.5.0",
     "cross-env": "^5.2.0",
-    "jest": "^24.8.0",
-    "rimraf": "^2.6.3"
+    "eslint": "^6.1.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "rimraf": "^2.6.3",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
   },
   "dependencies": {
     "@pointfree/core": "^0.0.4"
